@@ -1,5 +1,5 @@
-from flask import Flask, render_template, redirect, url_for, request, flash, jsonify
 from app import app, db, models, login_manager
+from flask import Flask, render_template, redirect, url_for, request, flash, jsonify
 from .models import User, Film, Genre, film_genre, FilmRating, Followers
 from .forms import ReviewForm, LoginForm, SignupForm, FindFilmForm, FindFriends, ShowLikedForm
 from flask_admin.contrib.sqla import ModelView
