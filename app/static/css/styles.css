@@ -4,6 +4,10 @@
     font-weight: bold;
 }
 
+.navbar-toggler {
+    color: #ffffff !important;
+}
+
 .navbar-brand {
     color: #ffffff !important;
 }
