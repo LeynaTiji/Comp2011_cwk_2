@@ -1,0 +1,39 @@
+{% extends "base_movies.html" %}
+{% block content %}
+<h1>Create a Watchlist</h1>
+<form action="/watchlist" method="POST" name="watchlist">
+    {{ form.hidden_tag() }}
+    <div class="genre">
+        <div>
+            <label for="watchlist" class="filter">Like films and create a watchlist</label>
+            {{ form.watchlist}}
+            <button type="submit" class="find-btn">Create</button>
+        </div>
+    </div>
+</form>
+<div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 align-items-stretch">
+        {% for film in films %}
+        <div class="col">
+            <div class="card no-border films">
+                <img class="img-border" src="{{ film.image }}" alt="{{ film.title }}" width="250" height="350">
+                <div class="card-text films">
+                    <p>{{ film.title }}</p>
+                    {% if film.liked == 1 %}
+                    <span class="fa fa-heart selected" data-value="{{ film.liked | default(0) }}"
+                        data-film-id="{{ film.film_id }}"></span>
+                    <input type="hidden" id="heartValue" name="liked" value="0">
+                    <input type="hidden" id="filmId" name="film_id" value="{{ film.film_id}}">
+                    {% else %}
+                    <span class="fa fa-heart" data-value="{{ film.liked | default(0) }}"
+                        data-film-id="{{ film.film_id }}"></span>
+                    <input type="hidden" id="heartValue" name="liked" value="0">
+                    <input type="hidden" id="filmId" name="film_id" value="{{ film.film_id}}">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

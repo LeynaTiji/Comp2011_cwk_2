@@ -1,0 +1,152 @@
+.navbar {
+    background-color: #000000;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+}
+
+.nav-item {
+    font-size: larger;
+}
+
+.nav-link {
+    color: #cdd7dd !important;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ecf0f1 !important;
+}
+
+h1 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.style-form {
+    font-weight: bold;
+    background-color: #ddd;
+    border-radius: 15px;
+    padding: 25px 30px 25px 30px;
+}
+
+.style-form.elements {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.genre {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+
+}
+
+.filter {
+    font-weight: bold;
+}
+
+.find-btn {
+    border: 2px solid rgb(103, 218, 80);
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 1px 7px;
+    transition-duration: 0.4s;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    margin-left: 10px;
+}
+
+.find-btn:hover {
+    background-color: rgb(91, 177, 74);
+    color: white;
+}
+
+
+.card.no-border.films {
+    border: none;
+    width: 250px;
+}
+
+.card-text.films {
+    padding: 15px 0px;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    text-wrap: wrap;
+}
+
+.img-border {
+    border: 2px solid hsl(0, 0%, 87%);
+    border-radius: 18px;
+}
+
+.img-border:hover {
+    border: 2px solid #000000;
+}
+
+.search-bar {
+    border: 2px solid #ddd;
+    margin-right: 10px;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-form {
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-heart {
+    font-size: 2em;
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    cursor: pointer;
+    color: #ddd;
+}
+
+.fa-heart.selected {
+    color: rgb(107, 15, 15);
+}
+
+.fa-heart.hover {
+    color: rgb(107, 15, 15);
+}
+
+.star-rating {
+    font-size: 1.5em;
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    cursor: pointer;
+}
+
+.fa-star {
+    color: #ffffff;
+}
+
+.fa-star.selected {
+    color: rgb(241, 206, 6);
+}
+
+.fa-star.hover {
+    color: rgb(241, 206, 6);
+}

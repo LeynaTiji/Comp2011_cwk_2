@@ -1,0 +1,30 @@
+{% extends "base_movies.html" %}
+{% block content %}
+<h1>Movies</h1>
+
+<form action="/" method="POST" name="genre">
+    {{ form.hidden_tag() }}
+    <div class="genre">
+        <div>
+            <label for="genre" class="filter">Filter by </label>
+            {{ form.genre}}
+            <button type="submit" class="find-btn">Find</button>
+        </div>
+    </div>
+</form>
+<div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 align-items-stretch">
+        {% for film in films %}
+        <div class="col">
+            <div class="card no-border films">
+                <img class="img-border" src="{{ film.image }}" alt="{{ film.title}}" width="250" height="350">
+                <div>
+                    <p class="card-text films">{{ film.title }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

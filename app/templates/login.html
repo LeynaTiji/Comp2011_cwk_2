@@ -1,0 +1,22 @@
+{% extends "base_movies.html" %}
+{% block content %}
+<h1>Login</h1>
+<div class="container">
+  <div class="style-form">
+    <form action="{{ url_for('login') }}" method="POST" name="login">
+      {{ form.hidden_tag() }}
+      <div class="form-group">{{ form.username.label }}
+        <div>{{ form.username(class="form-control")}}</div>
+      </div>
+      <div class="form-group">{{ form.password.label }}
+        <div>{{ form.password(class="form-control")}}</div>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-success">Login</button>
+      </div>
+    </form>
+    <br>
+    <p>Dont have an account? Sign up <a href='/signup'>here</a>.</p>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "base_movies.html" %}
+{% block content %}
+<h1>Welcome {{ current_user.username}} </h1>
+<div class="container">
+    <p class="follower">Followers: {{ follower_count}} | Following: {{ following_count}}</p>
+    <p class="review-title">Recently reviewed film</p>
+    {% for reviewed in reviewed_films %}
+    <div class="review">
+        <div class="review content">
+            <img src="{{ reviewed.film.image }}" alt="{{ reviewed.film.title }}">
+            <div class="review info">
+                <p class="title">{{ reviewed.film.title }}</p>
+                <p class="date">Watched on: {{ reviewed.date }}</p>
+                <p class="star-review">
+                    {% for i in range(1,6) %}
+                    {% if i > reviewed.rating %} <i class="fas fa-star profile"></i>
+                    {% else %}
+                    <i class="fas fa-star profile" style="color: gold;"></i>
+                    {% endif %}
+                    {% endfor %}
+                </p>
+                <p class="comment">{{ reviewed.comment }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <p class="review-title">Films recently reviews by friends</p>
+    <div class="friends-films">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 align-items-stretch">
+            {% for reviewed in following_reviewed %}
+            <div class="col">
+                <div class="card no-border reviews">
+                    <img class="img-border" src="{{ reviewed.film.image }}" alt="{{ reviewed.film.title}}" width="180"
+                        height="225">
+                    <div class="card-text reviews">
+                        <p>{{ reviewed.user.username }}</p>
+                        {% for i in range(1,6) %}
+                        {% if i > reviewed.rating %} <i class=" fas fa-star friends"></i>
+                        {% else %}
+                        <i class="fas fa-star friends" style="color: gold;"></i>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}>

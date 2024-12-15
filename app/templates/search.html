@@ -1,0 +1,38 @@
+{% extends "base_movies.html" %}
+{% block content %}
+<h1>Find friends and connect</h1>
+<div class="container">
+    <div class="search-container">
+        <form action="{{ url_for('find_friends') }}" method="POST" name="search">
+            {{ form.hidden_tag() }}
+            <div class="search-form">
+                {{ form.search(class="search-bar") }}
+                <button type="submit" class="btn btn-success">Find</button>
+            </div>
+        </form>
+        {% if username %}
+        <div class="search-form">
+            <div class="card" style="width: 1000px">
+                <div class="card-header">
+                    Users
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        {% for user in username %}
+                        {% if user.username != current_user.username %}
+                        <h5 class="card-title">{{user.username}}</h5>
+                        <form action="/add_friends/{{user.user_id}}" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-primary">Add</button>
+                        </form>
+                        {% else %}
+                        <h5 class="card-title">{{user.username}}</h5>
+                        {% endif %}
+                        {% endfor %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

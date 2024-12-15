@@ -1,0 +1,96 @@
+.fa-star.profile {
+    font-size: 30px;
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    cursor: pointer;
+    color: #ffff;
+    margin: 0 3px;
+}
+
+.fa-star.friends {
+    font-size: 15px;
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    cursor: pointer;
+    color: #ddd;
+}
+
+.star-review {
+    gap: 5px;
+    padding: 10px 6px;
+}
+
+.review {
+    display: flex;
+    align-items: flex-start;
+    background-color: #ddd;
+    margin: 20px;
+    border-color: #b9b9b9;
+    border-radius: 3px;
+}
+
+.review .content {
+    padding: 2px 0;
+}
+
+.review img {
+    width: 100px;
+    height: 150px;
+    border-radius: 3px;
+}
+
+.review .info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    flex: 1;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 3px 3px;
+}
+
+.date {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 0 3px 3px;
+}
+
+.comment {
+    font-size: 19px;
+    font-weight: bold;
+    margin: 0px 3px;
+}
+
+.follower {
+    font-size: 22px;
+    font-weight: bold;
+    color: #050796;
+    padding-left: 20px;
+}
+
+.review-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    padding-left: 20px;
+}
+
+.friends-films {
+    padding: 0 20px;
+}
+
+.card.no-border.reviews {
+    border: none;
+    width: 180px;
+}
+
+.card-text.reviews {
+    padding: 15px 0px;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    text-wrap: wrap;
+}
